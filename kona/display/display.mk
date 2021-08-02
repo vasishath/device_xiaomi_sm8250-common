@@ -46,9 +46,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     modetest \
-    libtinyxml 
-    
-    
+    libtinyxml
+
+
 PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
     vendor.display.config@1.0.vendor \
@@ -62,7 +62,7 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.8.vendor \
     vendor.display.config@1.9.vendor \
     vendor.display.config@2.0 \
-    vendor.display.config@2.0.vendor 
+    vendor.display.config@2.0.vendor
 
 
 ifneq ($(TARGET_HAS_LOW_RAM),true)
@@ -131,7 +131,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.camera_noc_efficiency_factor=0.70 \
     vendor.display.disable_layer_stitch=0 \
     vendor.display.secure_preview_buffer_format=420_sp \
-    vendor.gralloc.secure_preview_buffer_format=420_sp 
+    vendor.gralloc.secure_preview_buffer_format=420_sp
 
 
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -155,6 +155,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.max_virtual_display_dim
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.wcg_composition_dataspace=143261696
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.protected_contents=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.use_content_detection_for_refresh_rate=true
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += debug.sf.set_idle_timer_ms=400
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.refresh_rate_switching=true
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.support_kernel_idle_timer=true
 # setTouchTimerMs indicates what is considered a timeout in milliseconds for Scheduler.
 # This value is used by the Scheduler to trigger touch inactivity callbacks that will switch the
 # display to a lower refresh rate. Setting this property to 0 means there is no timer.
@@ -165,7 +168,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.set_touch_timer_ms=200
 # GL composition.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 # Indicates whether background blurs are supported.
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.surface_flinger.supports_background_blur
 
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
